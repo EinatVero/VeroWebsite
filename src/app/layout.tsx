@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import Image from "next/image";
 import "./globals.css";
 import { MobileMenu } from "./components/MobileMenu";
 
@@ -44,18 +45,21 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-deep-blue">
+      <body className="min-h-full flex flex-col bg-white text-deep-green">
         {/* Navigation */}
         <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-sm">
           <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2">
-              <span className="text-2xl font-bold tracking-tight text-deep-blue">
-                Vero
-              </span>
-              <span className="hidden text-sm text-gray-400 sm:inline">
-                | Verify the Truth
-              </span>
+            <Link href="/" className="flex items-center gap-3">
+              <Image src="/logo.svg" alt="Vero" width={32} height={36} />
+              <div className="flex flex-col">
+                <span className="text-xl font-bold tracking-tight text-deep-green">
+                  Vero
+                </span>
+                <span className="hidden text-xs text-gray-400 sm:inline">
+                  Verify the Truth
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -64,16 +68,16 @@ export default function RootLayout({
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-gray-600 transition-colors hover:text-teal"
+                  className="text-sm font-medium text-gray-600 transition-colors hover:text-green"
                 >
                   {link.label}
                 </Link>
               ))}
               <a
-                href="https://wa.me/YOUR_NUMBER"
+                href="https://wa.me/14155238886"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-teal px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-teal-light"
+                className="rounded-full bg-green px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-green-light"
               >
                 Try on WhatsApp
               </a>
@@ -88,13 +92,16 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
 
         {/* Footer */}
-        <footer className="border-t border-gray-100 bg-deep-blue text-white">
+        <footer className="border-t border-gray-100 bg-deep-green text-white">
           <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               {/* Brand */}
-              <div>
-                <h3 className="text-xl font-bold">Vero</h3>
-                <p className="mt-2 text-sm text-gray-300">
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <Image src="/logo.svg" alt="Vero" width={28} height={32} />
+                  <h3 className="text-xl font-bold">Vero</h3>
+                </div>
+                <p className="text-sm text-gray-300">
                   AI-powered content verification. Helping people distinguish
                   real from fake in an age of synthetic media.
                 </p>
@@ -110,7 +117,7 @@ export default function RootLayout({
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-sm text-gray-300 transition-colors hover:text-teal-light"
+                        className="text-sm text-gray-300 transition-colors hover:text-green-light"
                       >
                         {link.label}
                       </Link>
@@ -129,10 +136,10 @@ export default function RootLayout({
                   get an instant trust score analysis.
                 </p>
                 <a
-                  href="https://wa.me/YOUR_NUMBER"
+                  href="https://wa.me/14155238886"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-block rounded-full bg-teal px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-teal-light"
+                  className="mt-4 inline-block rounded-full bg-green px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-green-light"
                 >
                   Message Us on WhatsApp
                 </a>

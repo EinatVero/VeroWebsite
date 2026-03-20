@@ -177,7 +177,7 @@ export default function LibraryPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Toast */}
       {toastVisible && (
-        <div className="fixed top-6 right-6 z-50 flex items-center gap-3 rounded-lg border border-teal/30 bg-white px-5 py-3 shadow-lg animate-fade-in">
+        <div className="fixed top-6 right-6 z-50 flex items-center gap-3 rounded-lg border border-green/30 bg-white px-5 py-3 shadow-lg animate-fade-in">
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-teal/10 text-teal">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -194,7 +194,7 @@ export default function LibraryPage() {
               />
             </svg>
           </span>
-          <p className="text-sm font-medium text-deep-blue">
+          <p className="text-sm font-medium text-deep-green">
             Coming soon — submissions opening in beta.
           </p>
           <button
@@ -210,7 +210,7 @@ export default function LibraryPage() {
       )}
 
       {/* ---- Hero ---- */}
-      <section className="bg-gradient-to-br from-deep-blue to-deep-blue-light py-20 text-center text-white">
+      <section className="bg-gradient-to-br from-deep-green to-deep-green-light py-20 text-center text-white">
         <div className="mx-auto max-w-3xl px-6">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
             Fake Content Library
@@ -225,7 +225,7 @@ export default function LibraryPage() {
       {/* ---- Submit Section ---- */}
       <section className="mx-auto max-w-3xl px-6 py-16">
         <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
-          <h2 className="text-2xl font-bold text-deep-blue">
+          <h2 className="text-2xl font-bold text-deep-green">
             Submit an Example
           </h2>
           <p className="mt-1 text-sm text-gray-500">
@@ -246,8 +246,8 @@ export default function LibraryPage() {
                     onClick={() => setFormType(t)}
                     className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
                       formType === t
-                        ? 'border-teal bg-teal text-white'
-                        : 'border-gray-300 bg-white text-gray-600 hover:border-teal hover:text-teal'
+                        ? 'border-green bg-green text-white'
+                        : 'border-gray-300 bg-white text-gray-600 hover:border-green hover:text-green'
                     }`}
                   >
                     {t}
@@ -274,7 +274,7 @@ export default function LibraryPage() {
                     ? 'Paste the misleading text here...'
                     : 'https://example.com/...'
                 }
-                className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 shadow-sm placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
+                className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 shadow-sm placeholder:text-gray-400 focus:border-green focus:outline-none focus:ring-1 focus:ring-teal"
                 required
               />
             </div>
@@ -293,7 +293,7 @@ export default function LibraryPage() {
                 value={formDescription}
                 onChange={(e) => setFormDescription(e.target.value)}
                 placeholder="Explain what makes this content misleading or fake..."
-                className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 shadow-sm placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
+                className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 shadow-sm placeholder:text-gray-400 focus:border-green focus:outline-none focus:ring-1 focus:ring-teal"
                 required
               />
             </div>
@@ -310,7 +310,7 @@ export default function LibraryPage() {
                 id="category"
                 value={formCategory}
                 onChange={(e) => setFormCategory(e.target.value as Category)}
-                className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 shadow-sm focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
+                className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 shadow-sm focus:border-green focus:outline-none focus:ring-1 focus:ring-teal"
               >
                 {CATEGORIES.map((c) => (
                   <option key={c} value={c}>
@@ -323,7 +323,7 @@ export default function LibraryPage() {
             {/* Submit */}
             <button
               type="submit"
-              className="inline-flex items-center gap-2 rounded-full bg-teal px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-teal-light focus:outline-none focus:ring-2 focus:ring-teal focus:ring-offset-2"
+              className="inline-flex items-center gap-2 rounded-full bg-green px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-green-light focus:outline-none focus:ring-2 focus:ring-teal focus:ring-offset-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -348,7 +348,7 @@ export default function LibraryPage() {
       {/* ---- Filter Bar ---- */}
       <section className="border-y border-gray-200 bg-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
-          <h2 className="text-lg font-semibold text-deep-blue">
+          <h2 className="text-lg font-semibold text-deep-green">
             Browse Examples
             <span className="ml-2 text-sm font-normal text-gray-400">
               ({filtered.length} result{filtered.length !== 1 ? 's' : ''})
@@ -362,7 +362,7 @@ export default function LibraryPage() {
               onChange={(e) =>
                 setFilterType(e.target.value as ContentType | 'All')
               }
-              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
+              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-green focus:outline-none focus:ring-1 focus:ring-teal"
             >
               <option value="All">All Types</option>
               {CONTENT_TYPES.map((t) => (
@@ -378,7 +378,7 @@ export default function LibraryPage() {
               onChange={(e) =>
                 setFilterCategory(e.target.value as Category | 'All')
               }
-              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
+              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-green focus:outline-none focus:ring-1 focus:ring-teal"
             >
               <option value="All">All Categories</option>
               {CATEGORIES.map((c) => (
@@ -426,7 +426,7 @@ export default function LibraryPage() {
 
                 {/* Card body */}
                 <div className="flex flex-1 flex-col px-5 py-4">
-                  <h3 className="text-base font-semibold text-deep-blue group-hover:text-teal transition-colors">
+                  <h3 className="text-base font-semibold text-deep-green group-hover:text-green transition-colors">
                     {entry.title}
                   </h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-500">

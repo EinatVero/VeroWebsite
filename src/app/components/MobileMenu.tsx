@@ -35,7 +35,7 @@ export function MobileMenu({ navLinks }: MobileMenuProps) {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50 hover:text-teal"
+                className="rounded-lg px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50 hover:text-green"
               >
                 {link.label}
               </Link>
@@ -44,7 +44,7 @@ export function MobileMenu({ navLinks }: MobileMenuProps) {
               href="https://wa.me/YOUR_NUMBER"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 rounded-full bg-teal px-5 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-teal-light"
+              className="mt-2 rounded-full bg-green px-5 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-green-light"
             >
               Try on WhatsApp
             </a>
