@@ -90,8 +90,12 @@ export default function LegalPage() {
                   operation of the Service.
                 </li>
                 <li>
-                  Rate limits apply. Excessive or automated requests may result
-                  in temporary or permanent suspension of access.
+                  Rates may be applied to the use of the Service. By choosing to
+                  use Vero, you agree to any applicable rates and charges.
+                </li>
+                <li>
+                  Excessive or automated requests may result in temporary or
+                  permanent suspension of access.
                 </li>
                 <li>
                   You are solely responsible for the content you submit to the
