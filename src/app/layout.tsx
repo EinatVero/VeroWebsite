@@ -51,12 +51,12 @@ export default function RootLayout({
           <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3">
-              <Image src="/logo.svg" alt="Vero" width={32} height={36} />
+              <Image src="/logo.svg" alt="Vero" width={36} height={40} className="flex-shrink-0" />
               <div className="flex flex-col">
                 <span className="text-xl font-bold tracking-tight text-deep-green">
                   Vero
                 </span>
-                <span className="hidden text-xs text-gray-400 sm:inline">
+                <span className="hidden text-xs text-gray-600 sm:inline">
                   The Truth Is Out There
                 </span>
               </div>
