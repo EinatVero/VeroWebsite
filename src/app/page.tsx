@@ -46,7 +46,7 @@ export default function Home() {
       <section id="how-it-works" className="bg-light-gray px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-green-dark sm:text-4xl">
+            <h2 className="text-3xl font-bold text-deep-green sm:text-4xl">
               How It Works
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
@@ -64,7 +64,7 @@ export default function Home() {
               <div className="absolute -top-3 left-8 flex h-7 w-7 items-center justify-center rounded-full bg-green text-sm font-bold text-white">
                 1
               </div>
-              <h3 className="text-xl font-semibold text-green-dark">
+              <h3 className="text-xl font-semibold text-deep-green">
                 Send Content
               </h3>
               <p className="mt-3 text-gray-600">
@@ -82,7 +82,7 @@ export default function Home() {
               <div className="absolute -top-3 left-8 flex h-7 w-7 items-center justify-center rounded-full bg-green text-sm font-bold text-white">
                 2
               </div>
-              <h3 className="text-xl font-semibold text-green-dark">
+              <h3 className="text-xl font-semibold text-deep-green">
                 AI Analysis
               </h3>
               <p className="mt-3 text-gray-600">
@@ -100,7 +100,7 @@ export default function Home() {
               <div className="absolute -top-3 left-8 flex h-7 w-7 items-center justify-center rounded-full bg-green text-sm font-bold text-white">
                 3
               </div>
-              <h3 className="text-xl font-semibold text-green-dark">
+              <h3 className="text-xl font-semibold text-deep-green">
                 Get Results
               </h3>
               <p className="mt-3 text-gray-600">
@@ -117,7 +117,7 @@ export default function Home() {
       <section className="bg-white px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-green-dark sm:text-4xl">
+            <h2 className="text-3xl font-bold text-deep-green sm:text-4xl">
               What We Verify
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
@@ -132,7 +132,7 @@ export default function Home() {
               <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-4xl transition-colors group-hover:bg-green/10">
                 &#128247;
               </div>
-              <h3 className="text-lg font-semibold text-green-dark">Images</h3>
+              <h3 className="text-lg font-semibold text-deep-green">Images</h3>
               <p className="mt-3 text-sm text-gray-600">
                 Detect AI-generated images, deepfakes, Photoshop manipulations,
                 and misleading visual content from any source.
@@ -144,7 +144,7 @@ export default function Home() {
               <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-4xl transition-colors group-hover:bg-green/10">
                 &#127909;
               </div>
-              <h3 className="text-lg font-semibold text-green-dark">Videos</h3>
+              <h3 className="text-lg font-semibold text-deep-green">Videos</h3>
               <p className="mt-3 text-sm text-gray-600">
                 Analyze video content frame-by-frame for deepfake indicators, AI
                 watermarks, synthetic voices, and manipulated footage.
@@ -156,7 +156,7 @@ export default function Home() {
               <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-4xl transition-colors group-hover:bg-green/10">
                 &#128279;
               </div>
-              <h3 className="text-lg font-semibold text-green-dark">URLs</h3>
+              <h3 className="text-lg font-semibold text-deep-green">URLs</h3>
               <p className="mt-3 text-sm text-gray-600">
                 Verify articles and web pages for misinformation, check source
                 credibility, cross-reference claims, and assess content
@@ -169,7 +169,7 @@ export default function Home() {
               <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-4xl transition-colors group-hover:bg-green/10">
                 &#128221;
               </div>
-              <h3 className="text-lg font-semibold text-green-dark">Text</h3>
+              <h3 className="text-lg font-semibold text-deep-green">Text</h3>
               <p className="mt-3 text-sm text-gray-600">
                 Analyze forwarded messages, claims, and quotes for factual
                 accuracy, detect AI-generated text, and identify viral
@@ -185,7 +185,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="text-3xl font-bold text-green-dark sm:text-4xl">
+              <h2 className="text-3xl font-bold text-deep-green sm:text-4xl">
                 The Trust Score
               </h2>
               <p className="mt-4 text-lg text-gray-600">
@@ -209,7 +209,7 @@ export default function Home() {
                     80+
                   </div>
                   <div>
-                    <h4 className="font-semibold text-green-dark">
+                    <h4 className="font-semibold text-deep-green">
                       High Authenticity
                     </h4>
                     <p className="text-sm text-gray-600">
@@ -226,7 +226,7 @@ export default function Home() {
                     60+
                   </div>
                   <div>
-                    <h4 className="font-semibold text-green-dark">
+                    <h4 className="font-semibold text-deep-green">
                       Mostly Credible
                     </h4>
                     <p className="text-sm text-gray-600">
@@ -243,7 +243,7 @@ export default function Home() {
                     40+
                   </div>
                   <div>
-                    <h4 className="font-semibold text-green-dark">
+                    <h4 className="font-semibold text-deep-green">
                       Uncertain
                     </h4>
                     <p className="text-sm text-gray-600">
@@ -260,7 +260,7 @@ export default function Home() {
                     20+
                   </div>
                   <div>
-                    <h4 className="font-semibold text-green-dark">
+                    <h4 className="font-semibold text-deep-green">
                       Significant Concerns
                     </h4>
                     <p className="text-sm text-gray-600">
@@ -277,7 +277,7 @@ export default function Home() {
                     0+
                   </div>
                   <div>
-                    <h4 className="font-semibold text-green-dark">
+                    <h4 className="font-semibold text-deep-green">
                       Likely Fake
                     </h4>
                     <p className="text-sm text-gray-600">
@@ -295,7 +295,7 @@ export default function Home() {
       {/* Powered By */}
       <section className="bg-white px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-7xl text-center">
-          <h2 className="text-3xl font-bold text-green-dark sm:text-4xl">
+          <h2 className="text-3xl font-bold text-deep-green sm:text-4xl">
             Powered By Leading Technology
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
@@ -310,7 +310,7 @@ export default function Home() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-green/10 text-3xl">
                 &#129504;
               </div>
-              <h3 className="text-xl font-semibold text-green-dark">
+              <h3 className="text-xl font-semibold text-deep-green">
                 AI Content Analysis
               </h3>
               <p className="mt-3 text-gray-600">
@@ -324,7 +324,7 @@ export default function Home() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-green/10 text-3xl">
                 &#128065;
               </div>
-              <h3 className="text-xl font-semibold text-green-dark">
+              <h3 className="text-xl font-semibold text-deep-green">
                 Visual Forensics
               </h3>
               <p className="mt-3 text-gray-600">
@@ -338,7 +338,7 @@ export default function Home() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-green/10 text-3xl">
                 &#128101;
               </div>
-              <h3 className="text-xl font-semibold text-green-dark">
+              <h3 className="text-xl font-semibold text-deep-green">
                 Source Verification
               </h3>
               <p className="mt-3 text-gray-600">
