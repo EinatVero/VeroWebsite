@@ -196,7 +196,7 @@ export default function LibraryPage() {
               />
             </svg>
           </span>
-          <p className="text-sm font-medium text-deep-green">
+          <p className="text-sm font-medium text-green-dark">
             Coming soon — submissions opening in beta.
           </p>
           <button
@@ -228,7 +228,7 @@ export default function LibraryPage() {
       {/* ---- Submit Section ---- */}
       <section className="mx-auto max-w-3xl px-6 py-16">
         <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
-          <h2 className="text-2xl font-bold text-deep-green">
+          <h2 className="text-2xl font-bold text-green-dark">
             Submit an Example
           </h2>
           <p className="mt-1 text-sm text-gray-500">
@@ -351,7 +351,7 @@ export default function LibraryPage() {
       {/* ---- Filter Bar ---- */}
       <section className="border-y border-gray-200 bg-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
-          <h2 className="text-lg font-semibold text-deep-green">
+          <h2 className="text-lg font-semibold text-green-dark">
             Browse Examples
             <span className="ml-2 text-sm font-normal text-gray-400">
               ({filtered.length} result{filtered.length !== 1 ? 's' : ''})
@@ -429,7 +429,7 @@ export default function LibraryPage() {
 
                 {/* Card body */}
                 <div className="flex flex-1 flex-col px-5 py-4">
-                  <h3 className="text-base font-semibold text-deep-green group-hover:text-green transition-colors">
+                  <h3 className="text-base font-semibold text-green-dark group-hover:text-green transition-colors">
                     {entry.title}
                   </h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-500">

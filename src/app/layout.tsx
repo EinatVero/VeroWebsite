@@ -45,7 +45,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-deep-green">
+      <body className="min-h-full flex flex-col bg-white text-green-dark">
         {/* Navigation */}
         <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-sm">
           <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
@@ -53,7 +53,7 @@ export default function RootLayout({
             <Link href="/" className="flex items-center gap-3">
               <Image src="/logo.svg" alt="Vero" width={32} height={36} />
               <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-tight text-deep-green">
+                <span className="text-xl font-bold tracking-tight text-green-dark">
                   Vero
                 </span>
                 <span className="hidden text-xs text-gray-400 sm:inline">
