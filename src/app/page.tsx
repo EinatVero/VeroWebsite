@@ -296,22 +296,22 @@ export default function Home() {
       <section className="bg-white px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-7xl text-center">
           <h2 className="text-3xl font-bold text-deep-green sm:text-4xl">
-            Powered By Leading AI
+            Powered By Leading Technology
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-            Vero combines multiple AI engines to deliver comprehensive analysis.
-            No single model has all the answers &mdash; our multi-engine
-            approach ensures thorough verification.
+            Vero combines multiple leading third-party tools and AI engines to
+            deliver comprehensive, multi-layered analysis. No single model has
+            all the answers &mdash; our multi-engine approach ensures thorough
+            verification from every angle.
           </p>
 
           <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-3">
-            {/* Gemini */}
             <div className="rounded-2xl border border-gray-100 p-8 transition-shadow hover:shadow-md">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-3xl">
-                &#9670;
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-green/10 text-3xl">
+                &#129504;
               </div>
               <h3 className="text-xl font-semibold text-deep-green">
-                Google Gemini
+                AI Content Analysis
               </h3>
               <p className="mt-3 text-gray-600">
                 Advanced multimodal AI for deep content understanding, fact
@@ -320,31 +320,31 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Sightengine */}
             <div className="rounded-2xl border border-gray-100 p-8 transition-shadow hover:shadow-md">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-3xl">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-green/10 text-3xl">
                 &#128065;
               </div>
               <h3 className="text-xl font-semibold text-deep-green">
-                Sightengine
+                Visual Forensics
               </h3>
               <p className="mt-3 text-gray-600">
-                Specialized visual AI for detecting image manipulations,
-                AI-generated visuals, and forensic-level analysis of visual
-                media.
+                Specialized detection engines for identifying image
+                manipulations, AI-generated visuals, deepfakes, and synthetic
+                media at the pixel level.
               </p>
             </div>
 
-            {/* XPOZ */}
             <div className="rounded-2xl border border-gray-100 p-8 transition-shadow hover:shadow-md">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-3xl">
-                &#128270;
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-green/10 text-3xl">
+                &#128101;
               </div>
-              <h3 className="text-xl font-semibold text-deep-green">XPOZ</h3>
+              <h3 className="text-xl font-semibold text-deep-green">
+                Source Verification
+              </h3>
               <p className="mt-3 text-gray-600">
-                Deepfake detection engine specialized in identifying synthetic
-                faces, voice cloning, and AI-generated human likenesses in media
-                content.
+                Social media profile analysis, bot detection, author
+                credibility scoring, and background checks to verify who is
+                behind the content.
               </p>
             </div>
           </div>
