@@ -350,10 +350,11 @@ export default function LegalPage() {
                 4. Data Retention
               </h3>
               <p className="mt-2">
-                Analysis results and submitted content are stored for a maximum
-                of <strong>30 days</strong> from the date of submission, after
-                which they are automatically deleted from our systems. Anonymized
-                aggregate statistics may be retained indefinitely.
+                Analysis results, submitted content, and associated data may be
+                retained by Vero for as long as necessary to provide and improve
+                the Service. Anonymized aggregate statistics may be retained
+                indefinitely. You may request deletion of your data at any time
+                by contacting us (see Section 7).
               </p>
             </section>
 
@@ -364,20 +365,22 @@ export default function LegalPage() {
               </h3>
               <p className="mt-2">
                 To provide comprehensive analysis, your content may be sent to
-                the following third-party services:
+                independent third-party AI engines, detection tools, and data
+                providers. These third-party services perform various functions
+                including but not limited to:
               </p>
               <ul className="mt-2 list-inside list-disc space-y-2">
                 <li>
-                  <strong>Google Gemini AI:</strong> For AI-powered content
-                  analysis, text understanding, and image/video interpretation.
+                  AI-powered content analysis, text understanding, and
+                  image/video interpretation.
                 </li>
                 <li>
-                  <strong>Sightengine:</strong> For forensic image analysis,
-                  including AI-generation detection and manipulation detection.
+                  Forensic media analysis, including AI-generation detection
+                  and manipulation detection.
                 </li>
                 <li>
-                  <strong>XPOZ:</strong> For reverse image search and
-                  provenance verification.
+                  Source verification, social media profile analysis, and
+                  credibility scoring.
                 </li>
               </ul>
               <p className="mt-2">
