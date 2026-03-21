@@ -2,19 +2,19 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #40916c;
+  --foreground: #15803d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-deep-green: #40916c;
-  --color-deep-green-light: #52b788;
-  --color-green: #74c69d;
-  --color-green-light: #95d5b2;
-  --color-green-pale: #b7e4c7;
-  --color-teal: #2dd4bf;
-  --color-teal-light: #5eead4;
+  --color-deep-green: #15803d;
+  --color-deep-green-light: #16a34a;
+  --color-green: #22c55e;
+  --color-green-light: #4ade80;
+  --color-green-pale: #86efac;
+  --color-teal: #10b981;
+  --color-teal-light: #34d399;
   --color-light-gray: #f8fafc;
   --color-light-green-bg: #f0fdf4;
   --font-sans: var(--font-geist-sans);
