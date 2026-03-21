@@ -57,7 +57,7 @@ export default function RootLayout({
                   Vero
                 </span>
                 <span className="hidden text-xs text-gray-400 sm:inline">
-                  Verify the Truth
+                  The Truth Is Out There
                 </span>
               </div>
             </Link>

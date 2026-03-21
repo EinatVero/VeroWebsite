@@ -14,7 +14,7 @@ export default function Home() {
             AI-Powered Verification
           </p>
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-            Verify the Truth
+            The Truth Is Out There
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-300 sm:text-xl">
             In a world flooded with AI-generated content and misinformation,

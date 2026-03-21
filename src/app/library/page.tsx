@@ -282,25 +282,6 @@ export default function LibraryPage() {
               />
             </div>
 
-            {/* Description */}
-            <div>
-              <label
-                htmlFor="description"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Why is this fake?
-              </label>
-              <textarea
-                id="description"
-                rows={3}
-                value={formDescription}
-                onChange={(e) => setFormDescription(e.target.value)}
-                placeholder="Explain what makes this content misleading or fake..."
-                className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 shadow-sm placeholder:text-gray-400 focus:border-green focus:outline-none focus:ring-1 focus:ring-teal"
-                required
-              />
-            </div>
-
             {/* Category */}
             <div>
               <label
@@ -321,6 +302,25 @@ export default function LibraryPage() {
                   </option>
                 ))}
               </select>
+            </div>
+
+            {/* Description */}
+            <div>
+              <label
+                htmlFor="description"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Tell us more
+              </label>
+              <textarea
+                id="description"
+                rows={3}
+                value={formDescription}
+                onChange={(e) => setFormDescription(e.target.value)}
+                placeholder="Explain what you noticed about this content..."
+                className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 shadow-sm placeholder:text-gray-400 focus:border-green focus:outline-none focus:ring-1 focus:ring-teal"
+                required
+              />
             </div>
 
             {/* Submit */}
