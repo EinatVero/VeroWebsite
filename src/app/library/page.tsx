@@ -213,11 +213,12 @@ export default function LibraryPage() {
       <section className="bg-gradient-to-br from-deep-green to-deep-green-light py-20 text-center text-white">
         <div className="mx-auto max-w-3xl px-6">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            Fake Content Library
+            Content Library
           </h1>
           <p className="mt-4 text-lg text-gray-300 sm:text-xl">
-            A community-driven collection of misleading content. Learn to spot
-            fakes by studying real examples.
+            A community-driven collection of verified and analyzed content.
+            Explore real-world examples to sharpen your ability to evaluate
+            what you see online.
           </p>
         </div>
       </section>
