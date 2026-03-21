@@ -7,7 +7,7 @@ import { useState, useMemo } from 'react';
 /* ------------------------------------------------------------------ */
 
 type ContentType = 'Image' | 'Video' | 'Text' | 'URL';
-type Category = 'Deepfake' | 'Misinformation' | 'Manipulated Media' | 'AI-Generated' | 'Scam';
+type Category = 'Deepfake' | 'Misinformation' | 'Manipulated Media' | 'AI-Generated' | 'Scam' | 'Other';
 
 interface LibraryEntry {
   id: number;
@@ -100,6 +100,7 @@ const CATEGORIES: Category[] = [
   'Manipulated Media',
   'AI-Generated',
   'Scam',
+  'Other',
 ];
 
 /* ------------------------------------------------------------------ */
@@ -135,6 +136,7 @@ function categoryBadge(cat: Category): string {
     'Manipulated Media': 'bg-fuchsia-100 text-fuchsia-700',
     'AI-Generated': 'bg-cyan-100 text-cyan-700',
     Scam: 'bg-red-100 text-red-700',
+    Other: 'bg-gray-100 text-gray-700',
   };
   return map[cat];
 }
