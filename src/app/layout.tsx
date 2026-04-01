@@ -147,15 +147,15 @@ export default function RootLayout({
             </div>
 
             <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-gray-400">
-              <p className="text-gray-300">Vero-Lab is a project owned and operated by Meditance Investments Ltd.</p>
-              <div className="mt-3 text-xs text-gray-500 space-y-0.5">
-                <p className="font-semibold text-gray-400">Company Info</p>
+              <p className="text-white">Vero-Lab is a project owned and operated by Meditance Investments Ltd.</p>
+              <div className="mt-3 text-xs text-gray-200 space-y-0.5">
+                <p className="font-semibold text-white">Company Info</p>
                 <p>Meditance Investments Ltd.</p>
                 <p>BVI Registration Number: 1856997</p>
                 <p>Palm Grove House, P.O. Box 438, Road Town, Tortola, British Virgin Islands</p>
-                <p><a href="mailto:info@meditancemedia.com" className="hover:text-gray-300 transition-colors">info@meditancemedia.com</a></p>
+                <p><a href="mailto:info@meditancemedia.com" className="hover:text-white transition-colors">info@meditancemedia.com</a></p>
               </div>
-              <p className="mt-4 text-xs text-gray-500">&copy; {new Date().getFullYear()} Vero. All rights reserved.</p>
+              <p className="mt-4 text-xs text-gray-300">&copy; {new Date().getFullYear()} Vero. All rights reserved.</p>
             </div>
           </div>
         </footer>
