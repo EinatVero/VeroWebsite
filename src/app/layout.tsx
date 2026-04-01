@@ -154,7 +154,8 @@ export default function RootLayout({
                 <p>Meditance Investments Ltd.</p>
                 <p>BVI Registration Number: 1856997</p>
                 <p>Palm Grove House, P.O. Box 438, Road Town, Tortola, British Virgin Islands</p>
-                <p><a href="mailto:info@meditancemedia.com" className="hover:text-white transition-colors">info@meditancemedia.com</a></p>
+                <p className="mt-2"><strong>Corporate Email:</strong> <a href="mailto:info@meditancemedia.com" className="hover:text-white transition-colors">info@meditancemedia.com</a></p>
+                <p><strong>Product Support:</strong> <a href="mailto:info@vero-lab.com" className="hover:text-white transition-colors">info@vero-lab.com</a></p>
               </div>
               <p className="mt-4 text-xs text-gray-300">&copy; {new Date().getFullYear()} Vero. All rights reserved.</p>
             </div>
