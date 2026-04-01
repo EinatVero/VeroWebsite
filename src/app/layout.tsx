@@ -147,7 +147,8 @@ export default function RootLayout({
             </div>
 
             <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-gray-400">
-              &copy; {new Date().getFullYear()} Vero. All rights reserved.
+              <p>&copy; {new Date().getFullYear()} Vero. All rights reserved.</p>
+              <p className="mt-2 text-xs text-gray-500">Vero-Lab is a project owned and operated by Meditance Investments Ltd.</p>
             </div>
           </div>
         </footer>
