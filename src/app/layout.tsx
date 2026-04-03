@@ -32,6 +32,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/legal", label: "Legal" },
+  { href: "/glossary", label: "Glossary" },
   { href: "/library", label: "Library" },
   { href: "/contact", label: "Contact" },
 ];
