@@ -113,94 +113,61 @@ export default function GlossaryPage() {
       </section>
 
       <div className="mx-auto max-w-4xl px-6 py-16">
-        {/* ═══ SOURCE ANALYSIS ═══ */}
+        {/* SOURCE ANALYSIS */}
         <section id="source" className="scroll-mt-24 mb-16">
           <SectionHeader
-            icon="\uD83C\uDF0D"
+            icon="🌍"
             title="Source Analysis"
             subtitle="How trustworthy is the account that posted this content?"
           />
 
           <div className="divide-y divide-gray-100">
-            <Term icon="\uD83D\uDD30" name="Source Trust" range="0-100%">
+            <Term icon="🔰" name="Source Trust" range="0-100%">
               How credible the source account is, based on its history,
               verification status, and behavior.
             </Term>
 
             <div className="py-3">
               <div className="flex gap-3">
-                <span className="text-lg shrink-0 mt-0.5">{"\u2705"}</span>
+                <span className="text-lg shrink-0 mt-0.5">✅</span>
                 <div>
                   <h4 className="font-semibold text-deep-green">Verdict</h4>
                   <div className="mt-2 space-y-0.5">
-                    <VerdictItem
-                      icon="\u2705"
-                      label="Verified Source"
-                      desc="Established, verified account"
-                    />
-                    <VerdictItem
-                      icon="\uD83D\uDFE2"
-                      label="Likely Authentic"
-                      desc="Credible account"
-                    />
-                    <VerdictItem
-                      icon="\uD83D\uDFE1"
-                      label="Unverified"
-                      desc="Cannot fully verify"
-                    />
-                    <VerdictItem
-                      icon="\uD83D\uDFE0"
-                      label="Use Caution"
-                      desc="Low credibility"
-                    />
-                    <VerdictItem
-                      icon="\uD83E\uDD16"
-                      label="Likely Bot"
-                      desc="Account appears automated"
-                    />
-                    <VerdictItem
-                      icon="\u26A0\uFE0F"
-                      label="Suspicious"
-                      desc="Suspicious patterns detected"
-                    />
-                    <VerdictItem
-                      icon="\u26D4"
-                      label="Known Misinformation"
-                      desc="Flagged for spreading false info"
-                    />
-                    <VerdictItem
-                      icon="\u2753"
-                      label="Anonymous"
-                      desc="Cannot determine identity"
-                    />
+                    <VerdictItem icon="✅" label="Verified Source" desc="Established, verified account" />
+                    <VerdictItem icon="🟢" label="Likely Authentic" desc="Credible account" />
+                    <VerdictItem icon="🟡" label="Unverified" desc="Cannot fully verify" />
+                    <VerdictItem icon="🟠" label="Use Caution" desc="Low credibility" />
+                    <VerdictItem icon="🤖" label="Likely Bot" desc="Account appears automated" />
+                    <VerdictItem icon="⚠️" label="Suspicious" desc="Suspicious patterns detected" />
+                    <VerdictItem icon="⛔" label="Known Misinformation" desc="Flagged for spreading false info" />
+                    <VerdictItem icon="❓" label="Anonymous" desc="Cannot determine identity" />
                   </div>
                 </div>
               </div>
             </div>
 
-            <Term icon="\uD83D\uDC64" name="Account">
-              The name of the source account. A checkmark means it&apos;s
-              verified.
+            <Term icon="👤" name="Account">
+              The name of the source account. A checkmark means it&apos;s verified.
             </Term>
 
-            <Term icon="\uD83D\uDCCA" name="Reliability" range="0-100">
+            <Term icon="📊" name="Reliability" range="0-100">
               How reliable the source account is overall.
             </Term>
 
-            <Term icon="\uD83E\uDD16" name="Bot Risk" range="0-100%">
+            <Term icon="🤖" name="Bot Risk" range="0-100%">
               The likelihood the account is automated.
             </Term>
 
-            <Term icon="\uD83D\uDC65" name="Followers">
+            <Term icon="👥" name="Followers">
               The account&apos;s follower count, for context on its reach.
             </Term>
           </div>
         </section>
 
-        {/* ═══ IMAGE / VIDEO ANALYSIS ═══ */}
+        {/* IMAGE / VIDEO ANALYSIS */}
         <section id="content" className="scroll-mt-24 mb-16">
           <SectionHeader
-            icon="\uD83D\uDDBC\uFE0F"
+            icon="🖼️"
             title="Image / Video Analysis"
             subtitle="Is the image or video real, AI-generated, or manipulated?"
           />
@@ -208,93 +175,52 @@ export default function GlossaryPage() {
           <div className="divide-y divide-gray-100">
             <div className="py-3">
               <div className="flex gap-3">
-                <span className="text-lg shrink-0 mt-0.5">{"\uD83D\uDCCA"}</span>
+                <span className="text-lg shrink-0 mt-0.5">📊</span>
                 <div>
                   <div className="flex items-baseline gap-2">
-                    <h4 className="font-semibold text-deep-green">
-                      Content Trust
-                    </h4>
-                    <span className="text-xs text-gray-400 font-mono">
-                      0-100%
-                    </span>
+                    <h4 className="font-semibold text-deep-green">Content Trust</h4>
+                    <span className="text-xs text-gray-400 font-mono">0-100%</span>
                   </div>
                   <p className="text-sm text-gray-600 mt-0.5 leading-relaxed">
-                    How confident Vero is that the content is authentic. Higher
-                    is better.
+                    How confident Vero is that the content is authentic. Higher is better.
                   </p>
                   <div className="mt-3 space-y-0.5">
-                    <VerdictItem
-                      icon="\uD83D\uDFE2"
-                      label="Likely Authentic"
-                      desc="80-100%"
-                    />
-                    <VerdictItem
-                      icon="\uD83D\uDFE1"
-                      label="Mostly Credible"
-                      desc="60-79%"
-                    />
-                    <VerdictItem
-                      icon="\uD83D\uDFE0"
-                      label="Questionable"
-                      desc="40-59%"
-                    />
-                    <VerdictItem
-                      icon="\uD83D\uDD34"
-                      label="Likely Manipulated"
-                      desc="20-39%"
-                    />
-                    <VerdictItem
-                      icon="\u26D4"
-                      label="Fake Or Manipulated"
-                      desc="0-19%"
-                    />
+                    <VerdictItem icon="🟢" label="Likely Authentic" desc="80-100%" />
+                    <VerdictItem icon="🟡" label="Mostly Credible" desc="60-79%" />
+                    <VerdictItem icon="🟠" label="Questionable" desc="40-59%" />
+                    <VerdictItem icon="🔴" label="Likely Manipulated" desc="20-39%" />
+                    <VerdictItem icon="⛔" label="Fake Or Manipulated" desc="0-19%" />
                   </div>
                 </div>
               </div>
             </div>
 
-            <Term
-              icon="\uD83E\uDD16"
-              name="AI Generated"
-              range="Low / Medium / High / Very High"
-            >
+            <Term icon="🤖" name="AI Generated" range="Low / Medium / High / Very High">
               The likelihood the content was created using AI tools.
             </Term>
 
-            <Term
-              icon="\uD83C\uDFAD"
-              name="Deepfake"
-              range="Low / Medium / High / Very High"
-            >
-              The likelihood that faces have been swapped, manipulated, or
-              generated by AI.
+            <Term icon="🎭" name="Deepfake" range="Low / Medium / High / Very High">
+              The likelihood that faces have been swapped, manipulated, or generated by AI.
             </Term>
 
-            <Term
-              icon="\u2702\uFE0F"
-              name="Manipulation"
-              range="Low / Medium / High / Very High"
-            >
-              The likelihood the content has been digitally edited to change the
-              story.
+            <Term icon="✂️" name="Manipulation" range="Low / Medium / High / Very High">
+              The likelihood the content has been digitally edited to change the story.
             </Term>
 
-            <Term icon="\uD83D\uDCAC" name="Explanation">
+            <Term icon="💬" name="Explanation">
               A plain-language summary of what Vero found.
             </Term>
 
-            <Term icon="\u26A0\uFE0F" name="Red Flags">
-              Specific concerns detected, such as inconsistent lighting,
-              unnatural edges, or signs of editing. Only shown when the score is
-              low.
+            <Term icon="⚠️" name="Red Flags">
+              Specific concerns detected, such as inconsistent lighting, unnatural edges, or signs of editing. Only shown when the score is low.
             </Term>
           </div>
         </section>
 
-        {/* ═══ TEXT RELIABILITY ═══ */}
+        {/* TEXT RELIABILITY */}
         <section id="text" className="scroll-mt-24 mb-16">
           <SectionHeader
-            icon="\uD83D\uDCDD"
+            icon="📝"
             title="Text Reliability"
             subtitle="Are the claims in the text backed by reputable sources?"
           />
@@ -302,70 +228,48 @@ export default function GlossaryPage() {
           <div className="divide-y divide-gray-100">
             <div className="py-3">
               <div className="flex gap-3">
-                <span className="text-lg shrink-0 mt-0.5">{"\uD83D\uDCCB"}</span>
+                <span className="text-lg shrink-0 mt-0.5">📋</span>
                 <div>
                   <div className="flex items-baseline gap-2">
-                    <h4 className="font-semibold text-deep-green">
-                      Text Reliability
-                    </h4>
-                    <span className="text-xs text-gray-400 font-mono">
-                      0-100%
-                    </span>
+                    <h4 className="font-semibold text-deep-green">Text Reliability</h4>
+                    <span className="text-xs text-gray-400 font-mono">0-100%</span>
                   </div>
                   <p className="text-sm text-gray-600 mt-0.5 leading-relaxed">
-                    Whether the claims are corroborated by reputable news
-                    sources.
+                    Whether the claims are corroborated by reputable news sources.
                   </p>
                   <div className="mt-3 space-y-0.5">
-                    <VerdictItem
-                      icon="\uD83D\uDFE2"
-                      label="70-100%"
-                      desc="Found on multiple reputable sources"
-                    />
-                    <VerdictItem
-                      icon="\uD83D\uDFE1"
-                      label="50-69%"
-                      desc="Found on one reputable source"
-                    />
-                    <VerdictItem
-                      icon="\uD83D\uDFE0"
-                      label="30-49%"
-                      desc="Found online but not on trusted outlets"
-                    />
-                    <VerdictItem
-                      icon="\uD83D\uDD34"
-                      label="0-29%"
-                      desc="No other sources found"
-                    />
+                    <VerdictItem icon="🟢" label="70-100%" desc="Found on multiple reputable sources" />
+                    <VerdictItem icon="🟡" label="50-69%" desc="Found on one reputable source" />
+                    <VerdictItem icon="🟠" label="30-49%" desc="Found online but not on trusted outlets" />
+                    <VerdictItem icon="🔴" label="0-29%" desc="No other sources found" />
                   </div>
                 </div>
               </div>
             </div>
 
-            <Term icon="\uD83D\uDD17" name="Found on">
+            <Term icon="🔗" name="Found on">
               Links to reputable news sources reporting the same information.
             </Term>
 
-            <Term icon="\uD83D\uDCCA" name="Factual Accuracy" range="0-100%">
+            <Term icon="📊" name="Factual Accuracy" range="0-100%">
               How factually accurate the claims appear to be.
             </Term>
 
-            <Term icon="\uD83D\uDCDD" name="Caption Analysis">
-              Plain-language analysis of the caption for misleading framing or
-              manipulation.
+            <Term icon="📝" name="Caption Analysis">
+              Plain-language analysis of the caption for misleading framing or manipulation.
             </Term>
 
             <div className="py-3">
               <div className="flex gap-3">
-                <span className="text-lg shrink-0 mt-0.5">{"\uD83D\uDCCB"}</span>
+                <span className="text-lg shrink-0 mt-0.5">📋</span>
                 <div>
                   <h4 className="font-semibold text-deep-green">Fact Check</h4>
                   <p className="text-sm text-gray-600 mt-0.5 leading-relaxed">
                     Individual claims, each marked:
                   </p>
                   <div className="mt-2 space-y-0.5">
-                    <VerdictItem icon="\u2713" label="Verified" desc="Claim appears to be factually correct" />
-                    <VerdictItem icon="\u2717" label="False" desc="Claim appears to be factually incorrect" />
+                    <VerdictItem icon="✓" label="Verified" desc="Claim appears to be factually correct" />
+                    <VerdictItem icon="✗" label="False" desc="Claim appears to be factually incorrect" />
                     <VerdictItem icon="~" label="Unverified" desc="Cannot determine accuracy" />
                   </div>
                 </div>
@@ -374,21 +278,20 @@ export default function GlossaryPage() {
           </div>
         </section>
 
-        {/* ═══ AFTER YOUR RESULT ═══ */}
+        {/* AFTER YOUR RESULT */}
         <section id="commands" className="scroll-mt-24">
           <SectionHeader
-            icon="\uD83D\uDCAC"
+            icon="💬"
             title="After Your Result"
             subtitle="Commands and feedback options available after each analysis."
           />
 
           <div className="divide-y divide-gray-100">
-            <Term icon="\uD83D\uDCC4" name="details">
-              Type this to get the full detailed report after receiving your
-              initial result.
+            <Term icon="📄" name="details">
+              Type this to get the full detailed report after receiving your initial result.
             </Term>
 
-            <Term icon="\uD83D\uDCAC" name="Feedback">
+            <Term icon="💬" name="Feedback">
               Write text, send a voice message, or rate 1-5 to help us improve.
             </Term>
           </div>
