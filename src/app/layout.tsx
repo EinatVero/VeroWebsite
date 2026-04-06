@@ -165,7 +165,7 @@ export default function RootLayout({
 
             <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-gray-400">
               <p className="text-xs text-gray-300">&copy; {new Date().getFullYear()} Meditance Investments Ltd. All rights reserved.</p>
-              <p className="mt-1 text-xs text-gray-500">BVI Registration: 1856997</p>
+              <p className="mt-1 text-xs text-gray-400">BVI Registration: 1856997</p>
             </div>
           </div>
         </footer>

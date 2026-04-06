@@ -387,10 +387,10 @@ export default function Home() {
               Try Vero-Lab on WhatsApp
             </a>
           </div>
-          <p className="mt-4 text-sm text-gray-400">
+          <p className="mt-4 text-sm text-gray-300">
             Start by sending content for verification via WhatsApp.
           </p>
-          <p className="mt-2 text-xs text-gray-500">
+          <p className="mt-2 text-xs text-gray-400">
             No account required. No automated outreach. You start every request.
           </p>
         </div>
