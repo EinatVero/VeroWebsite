@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Vero - AI-Powered Content Verification",
   description:
-    "Detect fake content, deepfakes, and misinformation instantly. Send any content via WhatsApp and get a trust score powered by advanced AI analysis.",
+    "Vero-Lab helps you assess whether digital content is authentic, AI-generated, or manipulated. Send content via WhatsApp and receive structured verification results.",
   keywords: [
     "fact check",
     "deepfake detection",
@@ -104,61 +104,68 @@ export default function RootLayout({
                   <h3 className="text-xl font-bold">Vero</h3>
                 </div>
                 <p className="text-sm text-gray-300">
-                  AI-powered content verification. Helping people distinguish
-                  real from fake in an age of synthetic media.
+                  Vero-Lab is a content verification tool developed and operated by Meditance Investments Ltd.
                 </p>
               </div>
 
               {/* Links */}
-              <div>
-                <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-300">
-                  Navigation
-                </h4>
-                <ul className="mt-3 space-y-2">
-                  {navLinks.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="text-sm text-gray-300 transition-colors hover:text-green-light"
-                      >
-                        {link.label}
-                      </Link>
+              <div className="grid grid-cols-2 gap-6">
+                <div>
+                  <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-300">
+                    Product
+                  </h4>
+                  <ul className="mt-3 space-y-2">
+                    <li>
+                      <Link href="/" className="text-sm text-gray-300 transition-colors hover:text-green-light">Home</Link>
                     </li>
-                  ))}
-                </ul>
+                    <li>
+                      <Link href="/about" className="text-sm text-gray-300 transition-colors hover:text-green-light">About</Link>
+                    </li>
+                    <li>
+                      <Link href="/glossary" className="text-sm text-gray-300 transition-colors hover:text-green-light">Glossary</Link>
+                    </li>
+                    <li>
+                      <Link href="/library" className="text-sm text-gray-300 transition-colors hover:text-green-light">Library</Link>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-300">
+                    Legal
+                  </h4>
+                  <ul className="mt-3 space-y-2">
+                    <li>
+                      <Link href="/legal#terms" className="text-sm text-gray-300 transition-colors hover:text-green-light">Terms &amp; Conditions</Link>
+                    </li>
+                    <li>
+                      <Link href="/legal#privacy" className="text-sm text-gray-300 transition-colors hover:text-green-light">Privacy Policy</Link>
+                    </li>
+                    <li>
+                      <Link href="/contact" className="text-sm text-gray-300 transition-colors hover:text-green-light">Contact</Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
 
               {/* Contact */}
               <div>
                 <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-300">
-                  Get Started
+                  Contact
                 </h4>
-                <p className="mt-3 text-sm text-gray-300">
-                  Send any image, video, URL, or text to our WhatsApp bot and
-                  get an instant trust score analysis.
-                </p>
-                <a
-                  href="https://wa.me/14155238886"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-block rounded-full bg-green px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-green-light"
-                >
-                  Message Us on WhatsApp
-                </a>
+                <ul className="mt-3 space-y-2">
+                  <li className="text-sm text-gray-300">
+                    <a href="mailto:info@vero-lab.com" className="transition-colors hover:text-green-light">info@vero-lab.com</a>
+                  </li>
+                  <li className="text-sm text-gray-300">
+                    <a href="mailto:support@vero-lab.com" className="transition-colors hover:text-green-light">support@vero-lab.com</a>
+                  </li>
+                </ul>
               </div>
             </div>
 
             <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-gray-400">
-              <p className="text-white">Vero-Lab is a project owned and operated by Meditance Investments Ltd.</p>
-              <div className="mt-3 text-xs text-gray-200 space-y-0.5">
-                <p className="font-semibold text-white">Company Info</p>
-                <p>Meditance Investments Ltd.</p>
-                <p>BVI Registration Number: 1856997</p>
-                <p>Palm Grove House, P.O. Box 438, Road Town, Tortola, British Virgin Islands</p>
-                <p className="mt-2"><strong>Corporate Email:</strong> <a href="mailto:info@meditancemedia.com" className="hover:text-white transition-colors">info@meditancemedia.com</a></p>
-                <p><strong>Product Support:</strong> <a href="mailto:info@vero-lab.com" className="hover:text-white transition-colors">info@vero-lab.com</a></p>
-              </div>
-              <p className="mt-4 text-xs text-gray-300">&copy; {new Date().getFullYear()} Vero. All rights reserved.</p>
+              <p className="text-xs text-gray-300">&copy; {new Date().getFullYear()} Meditance Investments Ltd. All rights reserved.</p>
+              <p className="mt-1 text-xs text-gray-500">BVI Registration: 1856997</p>
             </div>
           </div>
         </footer>

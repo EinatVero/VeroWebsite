@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Vero | AI Content Verification",
   description:
-    "Learn about Vero's mission to combat misinformation with AI-powered content verification.",
+    "Learn about Vero-Lab, a content verification tool developed and operated by Meditance Investments Ltd.",
 };
 
 const values = [
@@ -69,7 +69,7 @@ export default function AboutPage() {
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-blue-100">
             Vero is an AI-powered content verification platform that helps
             people distinguish real content from manipulated or AI-generated
-            media. We are building the trust layer for the information age.
+            media &mdash; helping users verify digital content.
           </p>
         </div>
       </section>
@@ -79,17 +79,20 @@ export default function AboutPage() {
         <div className="mx-auto max-w-5xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-[#1e3a5f] sm:text-4xl">
-              We believe in a fake-free world
+              Our Mission
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Vero was founded by a group of people who care deeply about truth.
-              In a world where AI-generated content is becoming indistinguishable
-              from reality, we saw the need for a simple, accessible tool that
-              empowers everyone to verify what they see, read, and share.
+              Help people verify the content they encounter online.
+              In a world where AI-generated content is becoming harder to
+              distinguish from reality, we saw the need for a simple, accessible
+              tool that helps users check what they see, read, and share.
             </p>
             <p className="mt-4 text-lg leading-8 text-gray-600">
-              Our mission is to make the world more truthful and safer by giving
-              people the tools to fight misinformation, one message at a time.
+              Provide accessible, structured content verification tools for
+              everyday use.
+            </p>
+            <p className="mt-4 text-sm text-gray-500">
+              Vero-Lab is developed and operated by Meditance Investments Ltd.
             </p>
           </div>
         </div>
@@ -139,8 +142,9 @@ export default function AboutPage() {
                     Send content via WhatsApp
                   </h3>
                   <p className="mt-1 text-gray-600">
-                    Forward any suspicious image, video, text, or URL to the
+                    Forward any image, video, text, or URL to the
                     Vero WhatsApp number. No app to install, no signup required.
+                    The user initiates the process &mdash; no content is analyzed without explicit action.
                   </p>
                 </div>
               </div>
@@ -153,9 +157,9 @@ export default function AboutPage() {
                     AI-powered multi-source analysis
                   </h3>
                   <p className="mt-1 text-gray-600">
-                    Vero analyzes your content using advanced AI models including
-                    Google Gemini, forensic image analysis, deepfake detection,
-                    and reverse image search to cross-reference multiple sources.
+                    Vero-Lab analyzes your content using multiple independent AI
+                    models, forensic analysis tools, and source verification
+                    methods to cross-reference findings.
                   </p>
                 </div>
               </div>
@@ -168,10 +172,10 @@ export default function AboutPage() {
                     Get a trust score and detailed report
                   </h3>
                   <p className="mt-1 text-gray-600">
-                    Within seconds, receive a clear trust score (0-100) along
-                    with a detailed breakdown explaining why the content was
-                    scored that way, including AI probability, manipulation
-                    indicators, and fact-check results.
+                    Typically within 30&ndash;60 seconds, receive a structured
+                    trust score (0&ndash;100) along with a breakdown explaining
+                    how the content was assessed, including AI probability and
+                    verification indicators.
                   </p>
                 </div>
               </div>
