@@ -11,7 +11,7 @@ export default function Home() {
 
         <div className="relative mx-auto max-w-4xl text-center">
           <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-green-light">
-            AI-Powered Verification
+            Digital Content Verification
           </p>
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
             The Truth Is Out There
@@ -391,7 +391,7 @@ export default function Home() {
             Start by sending content for verification via WhatsApp.
           </p>
           <p className="mt-2 text-xs text-gray-400">
-            No account required. No automated outreach. You start every request.
+            No automated outreach. You start every request.
           </p>
         </div>
       </section>

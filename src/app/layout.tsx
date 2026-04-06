@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vero - AI-Powered Content Verification",
+  title: "Vero - Digital Content Verification",
   description:
     "Vero-Lab helps you assess whether digital content is authentic, AI-generated, or manipulated. Send content via WhatsApp and receive structured verification results.",
   keywords: [
