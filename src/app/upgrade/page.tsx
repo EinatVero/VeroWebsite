@@ -69,7 +69,7 @@ function InvalidLinkNotice() {
         WhatsApp and request a fresh link.
       </p>
       <a
-        href="https://wa.me/14155238886"
+        href="https://wa.me/15856361210"
         target="_blank"
         rel="noopener noreferrer"
         className="mt-6 inline-flex items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-green-light hover:shadow-lg"
