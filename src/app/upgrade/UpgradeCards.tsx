@@ -67,7 +67,18 @@ const TIERS: TierCard[] = [
   },
 ];
 
-export function UpgradeCards({ token }: { token: string }) {
+export function UpgradeCards({
+  token,
+  ampClickId,
+}: {
+  token: string;
+  // AMP click correlation id — when the upgrade URL was issued by an
+  // AMP marketing campaign, this is the AMP Send.trackingId. Round-tripped
+  // through Stripe metadata so the postback can attribute revenue back
+  // to the originating campaign / contact / sender. Null on
+  // organic/WhatsApp-quota traffic.
+  ampClickId: string | null;
+}) {
   const [interval, setInterval] = useState<Interval>('monthly');
   const [loading, setLoading] = useState<Tier | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -79,7 +90,7 @@ export function UpgradeCards({ token }: { token: string }) {
       const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ tier, interval, token }),
+        body: JSON.stringify({ tier, interval, token, ampClickId }),
       });
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));

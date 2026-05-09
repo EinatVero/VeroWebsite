@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 };
 
 interface PageProps {
-  searchParams: Promise<{ u?: string }>;
+  searchParams: Promise<{ u?: string; amp_click_id?: string }>;
 }
 
 export default async function UpgradePage({ searchParams }: PageProps) {
-  const { u: token } = await searchParams;
+  const { u: token, amp_click_id: ampClickId } = await searchParams;
 
   const payload = token ? await verifyUpgradeToken(token) : null;
   const phoneSuffix = payload
@@ -39,7 +39,11 @@ export default async function UpgradePage({ searchParams }: PageProps) {
 
       <section className="mx-auto max-w-6xl px-6 lg:px-8">
         {token ? (
-          <UpgradeCards token={token} />
+          // amp_click_id (when present) is forwarded to the checkout API,
+          // which embeds it in the Stripe session metadata so the AMP brand
+          // postback fired from stripe-webhook can correlate the conversion
+          // back to the originating Send row in the AMP marketing platform.
+          <UpgradeCards token={token} ampClickId={ampClickId ?? null} />
         ) : (
           <InvalidLinkNotice />
         )}
