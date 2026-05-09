@@ -20,7 +20,7 @@ export default function UpgradeSuccessPage() {
           to WhatsApp and continue verifying with no limits.
         </p>
         <a
-          href="https://wa.me/14155238886"
+          href="https://wa.me/15856361210"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-8 inline-flex items-center gap-2 rounded-full bg-green px-8 py-4 text-base font-semibold text-white shadow-md transition-all hover:bg-green-light hover:shadow-lg"
