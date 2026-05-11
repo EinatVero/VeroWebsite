@@ -10,11 +10,31 @@ export const metadata: Metadata = {
 };
 
 interface PageProps {
-  searchParams: Promise<{ u?: string; amp_click_id?: string }>;
+  searchParams: Promise<{
+    u?: string;
+    amp_click_id?: string;
+    // GEM Affiliates / Tracknow attribution chain. GEM appends `click_id`
+    // when redirecting from its tracking domain to our landing URL. `sub1`
+    // is the passthrough param GEM forwards from the affiliate side —
+    // here it carries the AMP trackingId for the campaign that originated
+    // the click. Both round-trip through Stripe metadata so the postback
+    // path GEM→AMP can credit the conversion correctly.
+    click_id?: string;
+    sub1?: string;
+  }>;
 }
 
 export default async function UpgradePage({ searchParams }: PageProps) {
-  const { u: token, amp_click_id: ampClickId } = await searchParams;
+  const {
+    u: token,
+    amp_click_id: ampClickId,
+    click_id: gemClickId,
+    sub1: ampClickIdFromGem,
+  } = await searchParams;
+  // When traffic comes via GEM, sub1 carries the AMP trackingId. Prefer it
+  // over the direct amp_click_id param (both can be present in unusual
+  // flows; sub1-via-GEM is the more authoritative signal).
+  const effectiveAmpClickId = ampClickIdFromGem ?? ampClickId;
 
   const payload = token ? await verifyUpgradeToken(token) : null;
   const phoneSuffix = payload
@@ -43,7 +63,14 @@ export default async function UpgradePage({ searchParams }: PageProps) {
           // which embeds it in the Stripe session metadata so the AMP brand
           // postback fired from stripe-webhook can correlate the conversion
           // back to the originating Send row in the AMP marketing platform.
-          <UpgradeCards token={token} ampClickId={ampClickId ?? null} />
+          // gem_click_id (when present) is the GEM Affiliates / Tracknow
+          // click identifier — routed back to GEM's /postback endpoint on
+          // conversion, which then fires its own postback to AMP.
+          <UpgradeCards
+            token={token}
+            ampClickId={effectiveAmpClickId ?? null}
+            gemClickId={gemClickId ?? null}
+          />
         ) : (
           <InvalidLinkNotice />
         )}

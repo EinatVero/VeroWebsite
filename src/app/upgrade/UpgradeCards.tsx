@@ -70,6 +70,7 @@ const TIERS: TierCard[] = [
 export function UpgradeCards({
   token,
   ampClickId,
+  gemClickId,
 }: {
   token: string;
   // AMP click correlation id — when the upgrade URL was issued by an
@@ -78,6 +79,11 @@ export function UpgradeCards({
   // to the originating campaign / contact / sender. Null on
   // organic/WhatsApp-quota traffic.
   ampClickId: string | null;
+  // GEM Affiliates / Tracknow click id — present when the user landed
+  // via a GEM-routed link. Round-tripped to Stripe metadata so the
+  // stripe-webhook handler can fire a GEM postback at conversion, which
+  // GEM then forwards to AMP as the affiliate-side conversion record.
+  gemClickId: string | null;
 }) {
   const [interval, setInterval] = useState<Interval>('monthly');
   const [loading, setLoading] = useState<Tier | null>(null);
@@ -90,7 +96,7 @@ export function UpgradeCards({
       const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ tier, interval, token, ampClickId }),
+        body: JSON.stringify({ tier, interval, token, ampClickId, gemClickId }),
       });
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
