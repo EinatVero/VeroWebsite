@@ -15,6 +15,12 @@ interface CheckoutBody {
   // brand-postback to the AMP marketing platform attributing this
   // conversion to the originating campaign.
   ampClickId?: string | null;
+  // Optional GEM Affiliates / Tracknow click id — when present, embedded
+  // in Stripe metadata as `gem_click_id`. On checkout.session.completed
+  // the stripe-webhook handler fires GEM's /postback endpoint instead of
+  // calling AMP directly; GEM then forwards the conversion to AMP via
+  // the affiliate-side postback URL we register on their side.
+  gemClickId?: string | null;
 }
 
 export async function POST(req: Request): Promise<Response> {
@@ -63,11 +69,22 @@ export async function POST(req: Request): Promise<Response> {
       ? body.ampClickId
       : null;
 
+  // Same sanitisation for gemClickId. Tracknow click ids are typically
+  // short alphanumeric strings; the same shape filter works.
+  const gemClickId =
+    typeof body.gemClickId === 'string' &&
+    body.gemClickId.length > 0 &&
+    body.gemClickId.length <= 64 &&
+    /^[A-Za-z0-9_-]+$/.test(body.gemClickId)
+      ? body.gemClickId
+      : null;
+
   const baseMetadata: Record<string, string> = {
     phoneNumber: payload.phoneNumber,
     tier: body.tier,
     interval: body.interval,
     ...(ampClickId ? { amp_click_id: ampClickId } : {}),
+    ...(gemClickId ? { gem_click_id: gemClickId } : {}),
   };
 
   const session = await getStripe().checkout.sessions.create({
