@@ -72,7 +72,11 @@ export function UpgradeCards({
   ampClickId,
   gemClickId,
 }: {
-  token: string;
+  // WhatsApp-issued JWT identifying an existing Vero user. Null when the
+  // visitor came in cold via an SMS affiliate landing — in that case the
+  // backend skips the token-verify step and Stripe collects phone + email
+  // at checkout instead.
+  token: string | null;
   // AMP click correlation id — when the upgrade URL was issued by an
   // AMP marketing campaign, this is the AMP Send.trackingId. Round-tripped
   // through Stripe metadata so the postback can attribute revenue back
