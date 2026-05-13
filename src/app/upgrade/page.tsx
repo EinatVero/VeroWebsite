@@ -36,19 +36,24 @@ export default async function UpgradePage({ searchParams }: PageProps) {
   // flows; sub1-via-GEM is the more authoritative signal).
   const effectiveAmpClickId = ampClickIdFromGem ?? ampClickId;
 
+  // The token identifies an existing Vero user via WhatsApp deep-link. It
+  // is OPTIONAL: SMS-acquired traffic from affiliate campaigns lands here
+  // without a token (the visitor has never used Vero). When absent, Stripe
+  // collects phone + email at checkout via phone_number_collection, and the
+  // backend webhook creates the user record from session.customer_details.
   const payload = token ? await verifyUpgradeToken(token) : null;
-  const phoneSuffix = payload
-    ? maskPhone(payload.phoneNumber)
-    : null;
+  const phoneSuffix = payload ? maskPhone(payload.phoneNumber) : null;
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-light-green-bg via-white to-light-gray pb-20">
       <section className="mx-auto max-w-5xl px-6 pt-16 pb-10 text-center sm:pt-24 lg:px-8">
         <p className="text-sm font-semibold uppercase tracking-widest text-green">
-          Upgrade your plan
+          {phoneSuffix ? 'Upgrade your plan' : 'Start with Vero'}
         </p>
         <h1 className="mt-3 text-3xl font-bold tracking-tight text-deep-green sm:text-5xl">
-          Keep verifying with no limits
+          {phoneSuffix
+            ? 'Keep verifying with no limits'
+            : 'Verify any content with AI'}
         </h1>
         <p className="mx-auto mt-5 max-w-2xl text-lg text-gray-600">
           {phoneSuffix
@@ -58,22 +63,18 @@ export default async function UpgradePage({ searchParams }: PageProps) {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 lg:px-8">
-        {token ? (
-          // amp_click_id (when present) is forwarded to the checkout API,
-          // which embeds it in the Stripe session metadata so the AMP brand
-          // postback fired from stripe-webhook can correlate the conversion
-          // back to the originating Send row in the AMP marketing platform.
-          // gem_click_id (when present) is the GEM Affiliates / Tracknow
-          // click identifier — routed back to GEM's /postback endpoint on
-          // conversion, which then fires its own postback to AMP.
-          <UpgradeCards
-            token={token}
-            ampClickId={effectiveAmpClickId ?? null}
-            gemClickId={gemClickId ?? null}
-          />
-        ) : (
-          <InvalidLinkNotice />
-        )}
+        {/*
+          UpgradeCards renders for both authenticated (WhatsApp deep-link) and
+          unauthenticated (SMS affiliate landing) flows. amp_click_id and
+          gem_click_id are forwarded to the checkout API regardless of token
+          state so the postback chain (Stripe → GEM → AMP) can credit the
+          originating Send / campaign / affiliate.
+        */}
+        <UpgradeCards
+          token={token ?? null}
+          ampClickId={effectiveAmpClickId ?? null}
+          gemClickId={gemClickId ?? null}
+        />
       </section>
 
       <section className="mx-auto mt-12 max-w-3xl px-6 text-center lg:px-8">
@@ -82,29 +83,6 @@ export default async function UpgradePage({ searchParams }: PageProps) {
         </p>
       </section>
     </main>
-  );
-}
-
-function InvalidLinkNotice() {
-  return (
-    <div className="mx-auto max-w-xl rounded-2xl border border-amber-200 bg-amber-50 p-8 text-center">
-      <h2 className="text-xl font-semibold text-amber-900">
-        This upgrade link has expired
-      </h2>
-      <p className="mt-3 text-sm text-amber-800">
-        Upgrade links are personal and valid for 24 hours. Please open Vero on
-        WhatsApp and request a fresh link.
-      </p>
-      <a
-        href="https://wa.me/15856361210"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-6 inline-flex items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-green-light hover:shadow-lg"
-      >
-        Open Vero on WhatsApp
-        <span aria-hidden>&rarr;</span>
-      </a>
-    </div>
   );
 }
 

@@ -9,7 +9,11 @@ const VALID_INTERVALS: ReadonlySet<Interval> = new Set(['monthly', 'yearly']);
 interface CheckoutBody {
   tier: Tier;
   interval: Interval;
-  token: string;
+  // WhatsApp-issued JWT for an existing Vero user. Optional: SMS affiliate
+  // traffic arrives without one, in which case Stripe collects phone + email
+  // at checkout via phone_number_collection and the webhook creates the user
+  // record from session.customer_details.
+  token?: string | null;
   // Optional AMP click correlation id — when present, embedded in the
   // Stripe session metadata so the stripe-webhook handler can fire a
   // brand-postback to the AMP marketing platform attributing this
@@ -39,8 +43,14 @@ export async function POST(req: Request): Promise<Response> {
     return NextResponse.json({ error: 'Unknown billing interval' }, { status: 400 });
   }
 
-  const payload = await verifyUpgradeToken(body.token);
-  if (!payload) {
+  // Token is optional. When present we trust it as proof of an existing
+  // user identity (phone bound at WhatsApp request time). When absent (SMS
+  // affiliate landing), Stripe collects phone at checkout and the webhook
+  // creates the user record post-payment.
+  const payload = body.token ? await verifyUpgradeToken(body.token) : null;
+  if (body.token && !payload) {
+    // Token was provided but failed to verify — reject rather than silently
+    // downgrade to anonymous, so callers know to refresh their link.
     return NextResponse.json(
       { error: 'Upgrade link expired. Request a new one on WhatsApp.' },
       { status: 401 },
@@ -80,9 +90,12 @@ export async function POST(req: Request): Promise<Response> {
       : null;
 
   const baseMetadata: Record<string, string> = {
-    phoneNumber: payload.phoneNumber,
     tier: body.tier,
     interval: body.interval,
+    // phoneNumber is only set when a verified WhatsApp token was supplied.
+    // For anonymous SMS-landing traffic the webhook reads phone from
+    // session.customer_details.phone (populated by phone_number_collection).
+    ...(payload ? { phoneNumber: payload.phoneNumber } : {}),
     ...(ampClickId ? { amp_click_id: ampClickId } : {}),
     ...(gemClickId ? { gem_click_id: gemClickId } : {}),
   };
@@ -90,11 +103,17 @@ export async function POST(req: Request): Promise<Response> {
   const session = await getStripe().checkout.sessions.create({
     mode: 'subscription',
     line_items: [{ price: priceId, quantity: 1 }],
-    client_reference_id: payload.phoneNumber,
+    // Bind to phone only when we already have a verified one. For anonymous
+    // checkout, Stripe assigns the customer_id and we reconcile in the webhook.
+    ...(payload ? { client_reference_id: payload.phoneNumber } : {}),
     metadata: baseMetadata,
     subscription_data: {
       metadata: baseMetadata,
     },
+    // When no WhatsApp token was supplied, ask Stripe to collect phone so the
+    // webhook can create / link the user. When token IS present we already
+    // know the phone, so skip the collection step to keep the form short.
+    ...(payload ? {} : { phone_number_collection: { enabled: true } }),
     success_url: `${siteUrl}/upgrade/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${siteUrl}/upgrade/cancel`,
     allow_promotion_codes: true,
